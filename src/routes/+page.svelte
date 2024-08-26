@@ -1,5 +1,8 @@
 <script>
 	import { Tabs, Tab } from "$lib/Tabs";
+	import { Modal } from "$lib/Modal";
+
+	let modal1 = false;
 </script>
 
 <section class="section">
@@ -42,5 +45,21 @@
 				</article>
 			</Tab>
 		</Tabs>
+	</div>
+</section>
+
+<section class="section">
+	<h2 class="title is-3">Modals</h2>
+
+	<button class="button is-info" on:click={() => (modal1 = true)}>Open Modal</button>
+	<div data-theme="light">
+		<Modal bind:active={modal1}>
+			<div class="box">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi maxime necessitatibus in
+					tenetur fugit nisi accusamus veritatis, similique porro aperiam!
+				</p>
+			</div>
+		</Modal>
 	</div>
 </section>
