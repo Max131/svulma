@@ -1,28 +1,28 @@
 <script>
-	import { setContext, createEventDispatcher } from 'svelte';
-	import { writable } from 'svelte/store';
-	import Icon from '$lib/Icon';
+	import { setContext, createEventDispatcher } from "svelte";
+	import { writable } from "svelte/store";
+	import Icon from "$lib/Icon";
 
 	/**
 	 * Alignment of the tabs: can be `is-left`, `is-center`, `is-right`.
 	 * @type {'is-center' | 'is-left' | 'is-right'}
 	 * @default "is-left"
 	 */
-	export let align = '';
+	export let align = "";
 
 	/**
 	 * Size of the tabs: can be `is-small`, `is-medium`, or `is-large`.
 	 * @type {'is-small' | 'is-medium' | 'is-large'}
 	 * @default "is-medium"
 	 */
-	export let size = '';
+	export let size = "";
 
 	/**
 	 * Style of the tabs: can be `is-boxed` or `is-toggle`.
 	 * @type {'is-boxed' | 'is-toggle'}
 	 * @default ""
 	 */
-	export let style = '';
+	export let style = "";
 
 	/**
 	 * If the toggle style should be rounded.
@@ -55,7 +55,7 @@
 	 * @param {{id: string, label: string, icon?: string | function(): SvelteComponent, iconProps?: Object, active?: boolean}} tab - The tab to register.
 	 */
 	const registerTab = (tab) => {
-		if (!currentTab.id) {
+		if (!$currentTab.id) {
 			$currentTab = { ...tab };
 		}
 
@@ -71,13 +71,13 @@
 		$currentTab = { id, label };
 
 		// Dispatch a 'change' event with the updated active tab
-		dispatch('change', {
+		dispatch("change", {
 			activeTab: $currentTab
 		});
 	};
 
 	// Provide the tab management functions and state to child components
-	setContext('manageTabs', { registerTab, currentTab, setActiveTab });
+	setContext("manageTabs", { registerTab, currentTab, setActiveTab });
 
 	// Uncomment this block if you want to set a default active tab on mount
 	/* onMount(() => {
