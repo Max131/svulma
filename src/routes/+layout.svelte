@@ -1,5 +1,7 @@
 <script>
-	import '../app.scss';
+	import "../app.scss";
 </script>
 
-<slot />
+<main class="container">
+	<slot />
+</main>
