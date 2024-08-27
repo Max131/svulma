@@ -1,5 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import { fade } from "svelte/transition";
 
 	/**
 	 * Indicates whether the modal is active or not.
@@ -13,21 +13,21 @@
 	 * @type {string}
 	 * @default "Close Modal"
 	 */
-	export let ariaLabelClose = 'Close Modal';
+	export let ariaLabelClose = "Close Modal";
 
 	/**
 	 * Aria label for the modal.
 	 * @type {string}
 	 * @default "Modal Window"
 	 */
-	export let ariaLabel = 'Modal Window';
+	export let ariaLabel = "Modal Window";
 
 	/**
 	 * An ID for the modal
 	 * @type {string}
 	 * @default ""
 	 */
-	export let modalID = '';
+	export let modalID = "";
 
 	/**
 	 * Duration of the transition in milliseconds.
@@ -71,7 +71,7 @@
 	const closeKey = ({ code }) => {
 		if (disableEscKey) return;
 
-		code === 'Escape' && active && close();
+		code === "Escape" && active && close();
 	};
 </script>
 
