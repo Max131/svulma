@@ -7,15 +7,15 @@
 </script>
 
 <script>
-	import { getContext } from "svelte";
-	import { fade } from "svelte/transition";
+	import { getContext } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	/**
 	 * The label displayed on the tab.
 	 * @type {string}
 	 * @default "Tab"
 	 */
-	export let label = "Tab";
+	export let label = 'Tab';
 
 	/**
 	 * Whether the tab is currently active.
@@ -29,7 +29,7 @@
 	 * @type {string | function(): SvelteComponent}
 	 * @default ""
 	 */
-	export let icon = "";
+	export let icon = '';
 
 	/**
 	 * Properties for the icon component, if any.
@@ -38,7 +38,7 @@
 	 */
 	export let iconProps = {};
 
-	const { registerTab, currentTab, setActiveTab } = getContext("manageTabs");
+	const { registerTab, currentTab, setActiveTab } = getContext('manageTabs');
 	const id = `tab-${tabID++}`;
 
 	registerTab({ id, label, icon, iconProps, active });
@@ -52,7 +52,7 @@
 </script>
 
 {#if $currentTab.id === id}
-	<div class="tab-panel" {id} in:fade>
+	<div class="tab-panel" role="tabpanel" aria-labelledby={id} tabindex="0" in:fade>
 		<slot />
 	</div>
 {/if}
