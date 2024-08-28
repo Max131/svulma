@@ -77,13 +77,35 @@
 	};
 
 	/*
-	 * Function to set the active tab with keyboard
+	 * Function to set the active tab with keyboard space and enter
 	 * @param {{id: string, label: string}} tab - The tab to set as active.
 	 * @param {string} code - The code from event
 	 */
 	const setActiveTabWithKeyboard = (code, { id, label }) => {
 		if (code === 'Enter' || code === 'Space') {
 			setActiveTab({ id, label });
+		}
+	};
+
+	/**
+	 * Function to set the active tab with keyboard arrows
+	 * @param {{target: listElement, code: string}} event
+	 */
+	const selectSiblingTab = ({ target, code }) => {
+		const listElement = target.closest('li');
+
+		if (listElement && code === 'ArrowLeft' && listElement.previousElementSibling) {
+			const tabButton = listElement.previousElementSibling.firstElementChild;
+			tabButton.focus();
+			tabButton.click();
+			return;
+		}
+
+		if (listElement && code === 'ArrowRight' && listElement.nextElementSibling) {
+			const tabButton = listElement.nextElementSibling.firstElementChild;
+			tabButton.focus();
+			tabButton.click();
+			return;
 		}
 	};
 
@@ -115,6 +137,7 @@
 				<a
 					on:click|preventDefault={() => setActiveTab({ id, label })}
 					on:keyup={({ code }) => setActiveTabWithKeyboard(code, { id, label })}
+					on:keyup={selectSiblingTab}
 					role="tab"
 					tabindex="0"
 					{id}
