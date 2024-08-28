@@ -1,9 +1,9 @@
 <script>
 	/** Icon string name or component */
-	export let icon = '';
+	export let icon = "";
 
 	/** Icon size */
-	export let size = '';
+	export let size = "";
 
 	/** Icon props */
 	export let iconProps = {};
@@ -38,11 +38,11 @@ import {Skull} from "lucide-svelte"
 -->
 
 <span class="icon" class:is-size={size}>
-	{#if typeof icon === 'string'}
-		<i class={icon} {...iconProps} />
+	{#if typeof icon === "string"}
+		<i class={icon} {...iconProps} role="img" />
 	{/if}
 
-	{#if typeof icon === 'function'}
+	{#if typeof icon === "function"}
 		<svelte:component this={icon} {...iconProps} />
 	{/if}
 </span>
