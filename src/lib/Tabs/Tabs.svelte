@@ -76,6 +76,17 @@
 		});
 	};
 
+	/*
+	 * Function to set the active tab with keyboard
+	 * @param {{id: string, label: string}} tab - The tab to set as active.
+	 * @param {string} code - The code from event
+	 */
+	const setActiveTabWithKeyboard = (code, { id, label }) => {
+		if (code === 'Enter' || code === 'Space') {
+			setActiveTab({ id, label });
+		}
+	};
+
 	// Provide the tab management functions and state to child components
 	setContext('manageTabs', { registerTab, currentTab, setActiveTab });
 
@@ -101,9 +112,9 @@
 	<ul role="tablist">
 		{#each tabs as { label, icon, iconProps, id } (id)}
 			<li data-tab={id} class:is-active={$currentTab.id === id}>
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<a
 					on:click|preventDefault={() => setActiveTab({ id, label })}
+					on:keyup={({ code }) => setActiveTabWithKeyboard(code, { id, label })}
 					role="tab"
 					tabindex="0"
 					{id}
