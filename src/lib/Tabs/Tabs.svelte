@@ -82,7 +82,7 @@
 	 * @param {string} code - The code from event
 	 */
 	const setActiveTabWithKeyboard = (code, { id, label }) => {
-		if (code === 'Enter' || code === 'Space') {
+		if (code === 'Enter' || code === 'Space' || code === 'NumpadEnter') {
 			setActiveTab({ id, label });
 		}
 	};
