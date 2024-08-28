@@ -1,5 +1,5 @@
 <script>
-	import { fade } from "svelte/transition";
+	import { fade } from 'svelte/transition';
 
 	/**
 	 * Indicates whether the modal is active or not.
@@ -13,21 +13,21 @@
 	 * @type {string}
 	 * @default "Close Modal"
 	 */
-	export let ariaLabelClose = "Close Modal";
+	export let ariaLabelClose = 'Close Modal';
 
 	/**
 	 * Aria label for the modal.
 	 * @type {string}
 	 * @default "Modal Window"
 	 */
-	export let ariaLabel = "Modal Window";
+	export let ariaLabel = 'Modal Window';
 
 	/**
 	 * An ID for the modal
 	 * @type {string}
 	 * @default ""
 	 */
-	export let modalID = "";
+	export let modalID = '';
 
 	/**
 	 * Duration of the transition in milliseconds.
@@ -71,7 +71,7 @@
 	const closeKey = ({ code }) => {
 		if (disableEscKey) return;
 
-		code === "Escape" && active && close();
+		code === 'Escape' && active && close();
 	};
 </script>
 
@@ -86,16 +86,17 @@
 		transition:fade={{ duration: transitionDuration }}
 	>
 		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-		<div
-			class="modal-background"
-			aria-label={ariaLabelClose}
-			on:click={() => !disableBackgroundClick && close()}
-		/>
+		<div class="modal-background" on:click={() => !disableBackgroundClick && close()} />
 		<div class="modal-content p-4">
 			<slot />
 		</div>
 		{#if !hideCloseButton}
-			<button class="modal-close is-large" aria-label="close" type="button" on:click={close} />
+			<button
+				class="modal-close is-large"
+				aria-label={ariaLabelClose}
+				type="button"
+				on:click={close}
+			/>
 		{/if}
 	</div>
 {/if}
