@@ -159,3 +159,10 @@
 <div class="tabs-content">
 	<slot />
 </div>
+
+<style>
+	a:focus-visible {
+		outline-offset: -2px;
+		border-radius: 4px;
+	}
+</style>
