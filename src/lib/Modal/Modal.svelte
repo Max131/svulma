@@ -1,4 +1,9 @@
 <script>
+  /**
+   * @component
+   * @slot {HTMLElement} default - Main slot content
+   */
+
   import { fade } from "svelte/transition";
 
   /**
