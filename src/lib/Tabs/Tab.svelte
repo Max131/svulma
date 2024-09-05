@@ -8,7 +8,6 @@
 
 <script>
   import { getContext } from "svelte";
-  import { fade } from "svelte/transition";
 
   /**
    * The label displayed on the tab.
@@ -52,7 +51,7 @@
 </script>
 
 {#if $currentTab.id === id}
-  <div class="tab-panel" role="tabpanel" aria-labelledby={id} tabindex="0" in:fade>
+  <div class="tab-panel" role="tabpanel" aria-labelledby={id} tabindex="0">
     <slot />
   </div>
 {/if}
