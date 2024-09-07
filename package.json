@@ -52,6 +52,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "bulma": "^1.0.2"
+    "bulma": "^1.0.2",
+    "lucide-svelte": "^0.439.0"
   }
 }
