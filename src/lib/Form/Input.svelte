@@ -1,4 +1,5 @@
 <script>
+  // TODO: filter props/add rest props
   import { getContext } from "svelte";
   import Icon from "$lib/Icon";
 
