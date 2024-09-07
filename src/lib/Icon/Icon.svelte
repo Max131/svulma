@@ -16,8 +16,15 @@
 
 ## Props
 
-- icon: icon string name for fonticon or a component for icon component
-- iconProps: an object with properties for the icon font/component
+- icon: icon can be either a string, component function or an object
+If is an object, it must be in the form: 
+{
+  icon: string || component function,
+  //icon props
+  "data-label": "Icon label"
+  color: "blueviolet"
+  ...
+}
 
 ```
 // Fontawesome
@@ -28,21 +35,37 @@
 
 // Lucide svelte icons
 import {Skull} from "lucide-svelte"
-<Icon icon={Skull} iconProps={{label: "Skull guy", color: "goldenrod", size: 36}} />
+<Icon icon={Skull} />
+
+// Component icon with props
+<Icon icon= {{
+  icon: Skull,
+  color: "goldenrod",
+  size: 36
+}} />
 
 
-// Other icon fonts (no tested yet)
-<Icon iconProps={{"data-icon": "user"}} />
 
 ```
 -->
 
 <span class="icon" class:is-size={size}>
   {#if typeof icon === "string"}
-    <i class={icon} {...iconProps} role="img" />
+    <i class={icon} role="img" />
   {/if}
 
   {#if typeof icon === "function"}
-    <svelte:component this={icon} {...iconProps} />
+    <svelte:component this={icon} role="img" />
+  {/if}
+
+  {#if typeof icon === "object"}
+    {@const { icon, ...props } = icon}
+    {#if typeof icon === "string"}
+      <i class={icon} {...props} role="img" />
+    {/if}
+
+    {#if typeof icon === "function"}
+      <svelte:component this={icon} {...props} role="img" />
+    {/if}
   {/if}
 </span>
