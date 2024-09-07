@@ -1,9 +1,16 @@
 <script>
   import { Tabs, Tab } from "$lib/Tabs";
   import { Modal } from "$lib/Modal";
+  import { Field, Input } from "$lib/Form";
+  import { Candy, Skull, User } from "lucide-svelte";
+  import Icon from "$lib/Icon";
 
   let modal1 = false;
 </script>
+
+<svelte:head>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</svelte:head>
 
 <section class="section">
   <h1 class="title">Svulma</h1>
@@ -14,17 +21,25 @@
 </section>
 
 <section class="section">
+  <h2 class="title is-3">Icons</h2>
+  <h3 class="title is-5">Icon string (boxicons)</h3>
+  <Icon icon="bx bxs-heart-circle bx-lg" size="is-large" />
+  <h3 class="title is-5">Icon Component (lucide icons)</h3>
+  <Icon icon={{ icon: Candy, size: 42 }} size="is-large" />
+</section>
+
+<section class="section">
   <h2 class="title is-3">Tabs</h2>
   <div class="my-4">
     <Tabs>
-      <Tab label="User">
+      <Tab label="User" icon="bx bxs-pear">
         <p>
           Lorem consectetur aut ex id eveniet Expedita perferendis molestias corrupti quas tempora.
           Maiores sapiente similique voluptas incidunt ducimus ducimus. Sint minima cumque nulla ea
           porro. Expedita dolore debitis delectus dolorum.
         </p>
       </Tab>
-      <Tab label="Config">
+      <Tab label="Config" icon={Skull}>
         <article class="media">
           <figure class="media-left">
             <p class="image is-64x64">
@@ -44,6 +59,20 @@
           </div>
         </article>
       </Tab>
+      <Tab label="Paragraph">
+        <div class="content">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet harum, tenetur eum,
+            labore ratione repellat mollitia commodi veniam soluta voluptatum tempore eius quas
+            nobis officia deleniti consequatur voluptatibus laudantium ea.
+          </p>
+          <p>
+            Accusantium dolorem eos iure inventore odio expedita officia quasi error impedit veniam!
+            Aliquam inventore expedita nihil, quidem odio soluta in sequi debitis impedit corporis,
+            facere sunt possimus culpa quo consequatur!
+          </p>
+        </div>
+      </Tab>
     </Tabs>
   </div>
 </section>
@@ -62,4 +91,29 @@
       </div>
     </Modal>
   </div>
+</section>
+
+<section class="section">
+  <h3 class="title is-3">Forms</h3>
+  <Field>
+    <Input />
+  </Field>
+  <Field>
+    <Input icon="bx bx-envelope" />
+  </Field>
+  <Field>
+    <Input iconRight={User} />
+  </Field>
+  <Field hasAddons>
+    <Input value="lorem ipsum" />
+    <div class="control">
+      <button class="button is-warning">Button</button>
+    </div>
+  </Field>
+  <Field hasAddons>
+    <div class="control">
+      <butto class="button is-static">With reveal button</butto>
+    </div>
+    <Input typeInput="password" value="myownpassword" revealButton />
+  </Field>
 </section>
