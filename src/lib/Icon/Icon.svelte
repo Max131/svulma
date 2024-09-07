@@ -46,7 +46,7 @@ import {Skull} from "lucide-svelte"
 ```
 -->
 
-<span class="icon" class:is-size={size}>
+<span class="icon {size}">
   {#if typeof icon === "string"}
     <i class={icon} role="img" />
   {/if}
