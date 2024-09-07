@@ -4,9 +4,6 @@
 
   /** Icon size */
   export let size = "";
-
-  /** Icon props */
-  export let iconProps = {};
 </script>
 
 <!--
