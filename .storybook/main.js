@@ -11,6 +11,7 @@ const config = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions"
   ],
+  tags: ["autodocs"],
   framework: {
     name: "@storybook/sveltekit",
     options: {}
