@@ -10,7 +10,9 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "exports": {
     ".": {
@@ -27,8 +29,17 @@
     "svelte": "^4.0.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-svelte-csf": "^4.1.7",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/svelte": "^8.2.9",
+    "@storybook/sveltekit": "^8.2.9",
+    "@storybook/test": "^8.2.9",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/package": "^2.0.0",
@@ -36,6 +47,7 @@
     "@types/eslint": "^9.6.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-svelte": "^2.36.0",
     "globals": "^15.0.0",
     "husky": "^9.1.5",
@@ -43,6 +55,7 @@
     "prettier-plugin-svelte": "^3.1.2",
     "publint": "^0.1.9",
     "sass": "^1.77.8",
+    "storybook": "^8.2.9",
     "svelte": "^4.2.7",
     "svelte-check": "^3.6.0",
     "typescript": "^5.0.0",
@@ -54,5 +67,10 @@
   "dependencies": {
     "bulma": "^1.0.2",
     "lucide-svelte": "^0.439.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
