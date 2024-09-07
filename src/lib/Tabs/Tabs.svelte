@@ -52,7 +52,7 @@
 
   /**
    * Function to register a tab. Adds the tab to the internal list of tabs.
-   * @param {{id: string, label: string, icon?: string | function(): SvelteComponent, iconProps?: Object, active?: boolean}} tab - The tab to register.
+   * @param {{id: string, label: string, icon?: string | function() | object: SvelteComponent, active?: boolean}} tab - The tab to register.
    */
   const registerTab = (tab) => {
     if (!$currentTab.id) {
@@ -132,7 +132,7 @@
   id={crypto.randomUUID()}
 >
   <ul role="tablist">
-    {#each tabs as { label, icon, iconProps, id } (id)}
+    {#each tabs as { label, icon, id } (id)}
       <li data-tab={id} class:is-active={$currentTab.id === id}>
         <a
           on:click|preventDefault={() => setActiveTab({ id, label })}
@@ -145,7 +145,7 @@
         >
           {#if icon}
             <!-- Render the Icon component if `icon` is provided -->
-            <Icon {icon} {iconProps} />
+            <Icon {icon} />
           {/if}
           <span>
             {label}

@@ -24,23 +24,16 @@
   export let active = false;
 
   /**
-   * The icon displayed on the tab, which can be a string (e.g., an icon name) or a function that returns a Svelte component.
-   * @type {string | function(): SvelteComponent}
+   * The icon displayed on the tab, which can be a string (e.g., an icon name) a function that returns a Svelte component or an Object wiht an icon and props.
+   * @type {string | function(): SvelteComponent | object}
    * @default ""
    */
   export let icon = "";
 
-  /**
-   * Properties for the icon component, if any.
-   * @type {Object}
-   * @default {}
-   */
-  export let iconProps = {};
-
   const { registerTab, currentTab, setActiveTab } = getContext("manageTabs");
   const id = `tab-${tabID++}`;
 
-  registerTab({ id, label, icon, iconProps, active });
+  registerTab({ id, label, icon, active });
 
   // $: if (active) {
   // 	$currentTab.id = id;
