@@ -27,6 +27,13 @@
   export let size = "";
 
   /**
+   * Add a loader icon wihtin the input control
+   * @type {boolean}
+   * @default false
+   */
+  export let isLoading = false;
+
+  /**
    * The value of the input field. Used for two-way binding with the input.
    * @type {string}
    * @default ""
@@ -131,6 +138,7 @@
 
 <div
   class="control"
+  class:is-loading={isLoading}
   class:is-expanded={expanded}
   class:has-icons-left={icon}
   class:has-icons-right={iconRight || revealButton}
