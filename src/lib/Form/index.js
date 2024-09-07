@@ -1,3 +1,4 @@
 import Field from "./Field.svelte";
+import Input from "./Input.svelte";
 
-export { Field };
+export { Field, Input };
