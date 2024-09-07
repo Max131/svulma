@@ -1,5 +1,6 @@
 <script>
   import { getContext } from "svelte";
+  import Icon from "$lib/Icon";
 
   /**
    * Determines if the input should be expanded to fill its container.
@@ -136,7 +137,7 @@
 >
   {#if icon}
     <span class="icon is-left has-text-{iconColor}">
-      <i class={icon} />
+      <Icon {icon} />
     </span>
   {/if}
   <input
@@ -157,7 +158,7 @@
   />
   {#if iconRight && !revealButton}
     <span class="icon is-right has-text-{iconColor}">
-      <i class={iconRight} />
+      <Icon icon={iconRight} />
     </span>
   {/if}
   {#if revealButton && (typeInput === "password" || typeInput === "text")}
