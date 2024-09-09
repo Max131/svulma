@@ -51,6 +51,7 @@
     "eslint-plugin-svelte": "^2.36.0",
     "globals": "^15.0.0",
     "husky": "^9.1.5",
+    "lucide-svelte": "^0.439.0",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
     "publint": "^0.1.9",
@@ -65,8 +66,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "bulma": "^1.0.2",
-    "lucide-svelte": "^0.439.0"
+    "bulma": "^1.0.2"
   },
   "eslintConfig": {
     "extends": [
