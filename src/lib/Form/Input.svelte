@@ -72,13 +72,6 @@
   export let revealButtonAriaLabel = "Show/Hide Password";
 
   /**
-   * The ID of the input element, used for accessibility and linking with labels.
-   * @type {string}
-   * @default ""
-   */
-  export let id = "";
-
-  /**
    * A reactive variable that gets context variables related to help messages from a parent component.
    * If the context is not provided, helpType and helpID will default to `null`.
    * @type {Object}
@@ -154,8 +147,8 @@
     type="text"
     class="input {type} {size} {$$props.class}"
     bind:value
-    {id}
     aria-describedby={helpID}
+    {...$$restProps}
     on:input
     on:change
     on:click
