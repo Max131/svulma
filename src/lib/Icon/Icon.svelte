@@ -56,13 +56,13 @@ import {Skull} from "lucide-svelte"
   {/if}
 
   {#if typeof icon === "object"}
-    {@const { icon, ...props } = icon}
-    {#if typeof icon === "string"}
-      <i class={icon} {...props} role="img" />
+    {@const { icon: newIcon, ...props } = icon}
+    {#if typeof newIcon === "string"}
+      <i class={newIcon} {...props} role="img" />
     {/if}
 
-    {#if typeof icon === "function"}
-      <svelte:component this={icon} {...props} role="img" />
+    {#if typeof newIcon === "function"}
+      <svelte:component this={newIcon} {...props} role="img" />
     {/if}
   {/if}
 </span>
