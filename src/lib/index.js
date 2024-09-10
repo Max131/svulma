@@ -1,6 +1,6 @@
 import { Tabs, Tab } from "./Tabs";
 import { Modal, ModalCard } from "./Modal";
-import { Field, Input } from "./Form";
+import { Field, Input, Textarea } from "./Form";
 import Icon from "./Icon";
 
-export { Tabs, Tab, Modal, ModalCard, Field, Input, Icon };
+export { Tabs, Tab, Modal, ModalCard, Field, Input, Textarea, Icon };
