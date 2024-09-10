@@ -4,6 +4,12 @@
   import Icon from "$lib/Icon";
 
   /**
+   * Input DOM reference.
+   * @type {HTMLInputElement | null}
+   */
+  let input = null;
+
+  /**
    * Determines if the input should be expanded to fill its container.
    * When true, the input will have a `is-expanded` class.
    * @type {boolean}
@@ -110,6 +116,7 @@
    */
   const toggleShowPassword = () => {
     typeInput = typeInput === "text" ? "password" : "text";
+    input.focus();
   };
 
   /**
@@ -143,6 +150,7 @@
     </span>
   {/if}
   <input
+    bind:this={input}
     use:inputType={typeInput}
     type="text"
     class="input {type} {size} {$$props.class}"
