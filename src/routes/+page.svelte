@@ -24,8 +24,14 @@
 <section class="section">
   <h2 class="title is-3">Buttons</h2>
   <Buttons>
-    <Button appearance="is-primary">Lorem</Button>
-    <Button appearance="is-success">Ipsum</Button>
+    <Button appearance="is-primary">
+      <Icon icon={User}></Icon>
+      <span>Lorem</span>
+    </Button>
+    <Button appearance="is-success">
+      <span>Ipsum</span>
+      <Icon icon={Candy}></Icon>
+    </Button>
     <Button appearance="is-info">Dolor</Button>
     <Button appearance="is-warning">Sit</Button>
     <Button appearance="is-danger">Amet</Button>
