@@ -3,6 +3,7 @@
   import { Modal } from "$lib/Modal";
   import { Field, Input } from "$lib/Form";
   import { Candy, Skull, User } from "lucide-svelte";
+  import { Button, Buttons } from "$lib/Button";
   import Icon from "$lib/Icon";
 
   let modal1 = false;
@@ -18,6 +19,38 @@
     A simple <a href="https://bulma.io" target="_blank" rel="noopener noreferrer">Bulma</a>
     components for <a href="https://svelte.dev" target="_blank" rel="noopener noreferrer">Svelte</a>
   </p>
+</section>
+
+<section class="section">
+  <h2 class="title is-3">Buttons</h2>
+  <Buttons>
+    <Button appearance="is-primary">Lorem</Button>
+    <Button appearance="is-success">Ipsum</Button>
+    <Button appearance="is-info">Dolor</Button>
+    <Button appearance="is-warning">Sit</Button>
+    <Button appearance="is-danger">Amet</Button>
+  </Buttons>
+  <Buttons>
+    <Button appearance="is-link">Lorem</Button>
+    <Button appearance="is-light">Ipsum</Button>
+    <Button appearance="is-white">Dolor</Button>
+    <Button appearance="is-dark">Sit</Button>
+    <Button appearance="is-text">Amet</Button>
+  </Buttons>
+  <Buttons>
+    <Button appearance="is-ghost">Lorem</Button>
+    <Button appearance="is-success" isLoading>Ipsum</Button>
+    <Button appearance="is-info" isLight>Dolor</Button>
+    <Button appearance="is-warning" isOutlined>Sit</Button>
+    <Button appearance="is-danger" isRounded>Amet</Button>
+  </Buttons>
+  <Buttons size="are-small">
+    <Button appearance="is-primary" isOutlined isLight isRounded isLoading>Lorem</Button>
+    <Button appearance="is-success">Ipsum</Button>
+    <Button appearance="is-info" size="is-large">Dolor</Button>
+    <Button appearance="is-warning">Sit</Button>
+    <Button appearance="is-danger">Amet</Button>
+  </Buttons>
 </section>
 
 <section class="section">
