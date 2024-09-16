@@ -152,7 +152,6 @@
   <input
     bind:this={input}
     use:inputType={typeInput}
-    type="text"
     class="input {type} {size} {$$props.class}"
     bind:value
     aria-describedby={helpID}
